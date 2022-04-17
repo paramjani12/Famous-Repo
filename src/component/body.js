@@ -27,8 +27,9 @@ const Body = () => {
     
     const displayUsers = users.slice(pagesVisited, pagesVisited+usersPerPage).map(post=>{
         return(
-            <MyCard href={post.html_url} target="_blank">
+            
             <CardContent sx={{width:300, height:350}} className="card" key={post.id} >
+                <MyCard href={post.html_url} target="_blank">
                 <div className='cardContainer'>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {post.owner.login}
@@ -48,8 +49,9 @@ const Body = () => {
                     <img src={img} style={{width:"15px",height:"15px"}}/> {post.forks_count}
                 </Typography>
                 </div>
+                </MyCard>
             </CardContent>
-            </MyCard>
+            
         )
     })
 
